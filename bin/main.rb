@@ -1,2 +1,4 @@
 #!/bin/ruby
+# frozen_string_literal: true
+
 p 'hello world'
