@@ -1,4 +1,6 @@
-# rubocop:disable Layout/LeadingCommentSpace, Lint/MissingCopEnableDirective, Metrics/MethodLength, Style/GlobalVars, Style/ClassVars, Style/MultipleComparison, Naming/VariableNumber, Layout/LineLength
+# frozen_string_literal: true
+
+# rubocop:disable Layout/LeadingCommentSpace, Lint/MissingCopEnableDirective, Metrics/MethodLength, Style/GlobalVars, Style/ClassVars, Style/MultipleComparison, Naming/VariableNumber, Layout/LineLength, Style/Documentation, Metrics/AbcSize
 #!/usr/bin/env ruby
 class Board
   private
@@ -82,23 +84,6 @@ class Game
   end
 end
 
-
-class Logic
-    def same_place(x, y)
-        if $arr[x][y] != " "
-            puts "You are cheating"
-            turn_again = Game.new
-            turn_again.turns
-        else 
-            puts "nice" 
-        end
-    end
-
-    def check
-        if 
-    end
-end
-
 puts 'TIC-TAC-TOE GAME'
 puts 'Do you want to play? (yes/no)'
 
@@ -109,6 +94,3 @@ if want_to_play == 'yes' || want_to_play == 'y'
 else
   puts 'THANK YOU, GOOD LUCK!!'
 end
-
-
-"hii"
