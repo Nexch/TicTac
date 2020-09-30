@@ -40,38 +40,40 @@ class Board
 end
 
 class Game
-    def turns
-        turn = 1
-        p "Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column"
-      while turn < 9
-        if turn.odd?
-          flag = "x"
-        else
-          flag = "o"
-        end
-        p "player one"
-        p 'row'
-        inp1 = gets
-        p 'colum'
-        inp2 = gets
-        inp1_i = inp1.to_i
-        inp2_i = inp2.to_i
-        inp1_i = inp1_i - 1
-        inp2_i = (inp2_i * 6) - 3
-        parameters(inp1_i)
-        $arr[inp1_i][inp2_i] = flag
-        board_1 = Board.new
-        board_1.board
-        turn += 1
+  @@turn = 1
+  def turns
+    p "Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column"
+    while @@turn < 9
+      if @@turn.odd?
+        flag = "x"
+      else
+        flag = "o"
+      end
+      p "player #{flag}"
+      p 'Select row'
+      inp1 = gets
+      p 'Select colum'
+      inp2 = gets
+      inp1_i = inp1.to_i
+      inp2_i = inp2.to_i
+      parameters(inp1_i)
+      parameters(inp2_i)
+      inp1_i = inp1_i - 1
+      inp2_i = (inp2_i * 6) - 3
+      $arr[inp1_i][inp2_i] = flag
+      board_1 = Board.new
+      board_1.board
+      @@turn += 1
       end
     end
 
     def parameters(arg)
-        if arg == 1 || 2 || 3
-            p "w"
-        else
-            p "Error"
-        end
+      if arg == 1 || arg == 2 || arg == 3
+
+      else
+        p "Error"
+        turns
+      end
     end
 end
 
@@ -79,8 +81,7 @@ puts "TIC-TAC-TOE GAME"
 puts "Do you want to play? (yes/no)"
 
 want_to_play = gets.chomp.downcase
-
-if want_to_play == "yes"
+if want_to_play == "yes" || want_to_play == "y"
     game_1 = Game.new
     game_1.turns
 else
