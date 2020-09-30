@@ -1,4 +1,4 @@
-# rubocop:disable Layout/LeadingCommentSpace, Lint/MissingCopEnableDirective,Style/FrozenStringLiteralComment, Metrics/MethodLength, Style/GlobalVars, Style/Documentation, Metrics/AbcSize, Style/ClassVars, Style/MultipleComparison, Naming/VariableNumber, Layout/LineLength
+# rubocop:disable Layout/LeadingCommentSpace, Lint/MissingCopEnableDirective, Metrics/MethodLength, Style/GlobalVars, Style/ClassVars, Style/MultipleComparison, Naming/VariableNumber, Layout/LineLength
 #!/usr/bin/env ruby
 class Board
   private
