@@ -93,6 +93,10 @@ class Logic
             puts "nice" 
         end
     end
+
+    def check
+        if 
+    end
 end
 
 puts 'TIC-TAC-TOE GAME'
@@ -105,3 +109,6 @@ if want_to_play == 'yes' || want_to_play == 'y'
 else
   puts 'THANK YOU, GOOD LUCK!!'
 end
+
+
+"hii"
