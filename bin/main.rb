@@ -1,4 +1,4 @@
-#!/bin/ruby
+#!/usr/bin/env ruby
 def line1
   print ' ' * 6
   print '#'
