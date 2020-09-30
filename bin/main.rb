@@ -106,7 +106,6 @@ class Logic
       turn_again = Game.new
       turn_again.turns
     else
-      puts "nice"
     end
   end
 
