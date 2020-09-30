@@ -63,6 +63,8 @@ class Game
       parameters(inp2_i)
       inp1_i -= 1
       inp2_i = (inp2_i * 6) - 3
+      same = Logic.new
+      same.same_place(inp1_i, inp2_i)
       $arr[inp1_i][inp2_i] = flag
       board_1 = Board.new
       board_1.board
@@ -79,6 +81,22 @@ class Game
     end
   end
 end
+
+class Logic
+    def same_place(x, y)	   
+        if $arr[x][y] != " "	        
+            puts "You are cheating"	            
+            turn_again = Game.new	            
+            turn_again.turns	          
+        else 	       
+            puts "nice" 	           
+        end	        
+    end	    
+
+    def check
+    
+    end
+end	
 
 puts 'TIC-TAC-TOE GAME'
 puts 'Do you want to play? (yes/no)'
