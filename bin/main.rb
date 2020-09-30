@@ -46,7 +46,7 @@ class Game
   @@turn = 1
   def turns
     p 'Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column'
-    while @@turn < 9
+    while @@turn <= 9
       flag = if @@turn.odd?
                'x'
              else
@@ -63,6 +63,8 @@ class Game
       parameters(inp2_i)
       inp1_i -= 1
       inp2_i = (inp2_i * 6) - 3
+      same = Logic.new
+      same.same_place(inp1_i, inp2_i)
       $arr[inp1_i][inp2_i] = flag
       board_1 = Board.new
       board_1.board
@@ -78,6 +80,19 @@ class Game
       turns
     end
   end
+end
+
+
+class Logic
+    def same_place(x, y)
+        if $arr[x][y] != " "
+            puts "You are cheating"
+            turn_again = Game.new
+            turn_again.turns
+        else 
+            puts "nice" 
+        end
+    end
 end
 
 puts 'TIC-TAC-TOE GAME'
