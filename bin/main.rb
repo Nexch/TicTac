@@ -1,12 +1,9 @@
-# frozen_string_literal: true
-
-# rubocop:disable Metrics/MethodLength
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Style/ClassVars
 # rubocop:disable Style/MultipleComparison
 # rubocop:disable Naming/VariableNumber
 # rubocop:disable Layout/LineLength
-
+# rubocop:disable Metrics/MethodLength
 # !/usr/bin/env ruby
 class Board
   private
@@ -54,7 +51,7 @@ end
 class Game
   @@turn = 1
   def turns
-    p 'Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column'
+    puts 'Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column'
     while @@turn <= 9
       flag = if @@turn.odd?
                'x'
@@ -101,9 +98,7 @@ if want_to_play == 'yes' || want_to_play == 'y'
 else
   puts 'THANK YOU, GOOD LUCK!!'
 end
-
-# rubocop:enable Metrics/MethodLength
-# rubocop:enable Style/GlobalVars
+# rubocop:enable Style/GlobalVars, Metrics/MethodLength
 # rubocop:enable Style/ClassVars
 # rubocop:enable Style/MultipleComparison
 # rubocop:enable Naming/VariableNumber
