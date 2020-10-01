@@ -1,5 +1,12 @@
-# rubocop:disable Layout/LeadingCommentSpace, Lint/MissingCopEnableDirective, Metrics/MethodLength, Style/GlobalVars, Style/ClassVars, Style/MultipleComparison, Naming/VariableNumber, Layout/LineLength
-#!/usr/bin/env ruby
+# frozen_string_literal: true
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Style/GlobalVars
+# rubocop:disable Style/ClassVars
+# rubocop:disable Style/MultipleComparison
+# rubocop:disable Naming/VariableNumber
+# rubocop:disable Layout/LineLength
+
+# !/usr/bin/env ruby
 class Board
   private
 
@@ -42,12 +49,13 @@ class Board
   $arr = [[' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ']]
 end
 
+# Game
 class Game
   @@turn = 1
   def turns
     p 'Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column'
-    while @@turn < 10
-      @@flag = if @@turn.odd?
+    while @@turn <= 9
+      flag = if @@turn.odd?
                'x'
              else
                'o'
@@ -147,3 +155,10 @@ def start
 end
 
 start
+
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Style/GlobalVars
+# rubocop:enable Style/ClassVars
+# rubocop:enable Style/MultipleComparison
+# rubocop:enable Naming/VariableNumber
+# rubocop:enable Layout/LineLength
