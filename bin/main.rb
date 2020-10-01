@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
-# rubocop:disable Layout/LeadingCommentSpace
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Style/ClassVars
 # rubocop:disable Style/MultipleComparison
 # rubocop:disable Naming/VariableNumber
 # rubocop:disable Layout/LineLength
-# rubocop:disable Metrics/AbcSize
 
-#!/usr/bin/env ruby
+# !/usr/bin/env ruby
 class Board
   private
 
@@ -104,11 +102,9 @@ else
   puts 'THANK YOU, GOOD LUCK!!'
 end
 
-# rubocop:enable Layout/LeadingCommentSpace
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Style/GlobalVars
 # rubocop:enable Style/ClassVars
 # rubocop:enable Style/MultipleComparison
 # rubocop:enable Naming/VariableNumber
 # rubocop:enable Layout/LineLength
-# rubocop:enable Metrics/AbcSize
