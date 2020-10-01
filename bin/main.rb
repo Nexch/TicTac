@@ -4,14 +4,9 @@
 # rubocop:disable Style/MultipleComparison
 # rubocop:disable Naming/VariableNumber
 # rubocop:disable Layout/LineLength
-# rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Metrics/PerceivedComplexity
-# rubocop:disable Metrics/AbcSize
-# rubocop:disable Style/GuardClause
 # !/usr/bin/env ruby
 
-require_relative '../lib/Logic.rb'
-
+require_relative '../lib/logic_game.rb'
 
 class Board
   private
@@ -138,7 +133,3 @@ first_start.turns
 # rubocop:enable Style/MultipleComparison
 # rubocop:enable Naming/VariableNumber
 # rubocop:enable Layout/LineLength
-# rubocop:enable Metrics/CyclomaticComplexity
-# rubocop:enable Metrics/PerceivedComplexity
-# rubocop:enable Metrics/AbcSize
-# rubocop:enable Style/GuardClause
