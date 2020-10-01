@@ -26,9 +26,9 @@ class Board
     print "\n"
   end
 
-  def true_line(array)
-    array = array.join('')
-    print array
+  def true_line(arg_array)
+    arg_array = arg_array.join('')
+    print arg_array
     print "\n"
   end
 
@@ -64,11 +64,11 @@ class Game
                end
       p "player #{@@flag}"
       p 'Select row'
-      inp1 = gets
+      input_1 = gets
       p 'Select colum'
-      inp2 = gets
-      inp1_i = inp1.to_i
-      inp2_i = inp2.to_i
+      input_2 = gets
+      inp1_i = input_1.to_i
+      inp2_i = input_2.to_i
       parameters(inp1_i)
       parameters(inp2_i)
       inp1_i -= 1
@@ -125,11 +125,11 @@ class Logic
     elsif $arr[1][9] == $arr[0][9] && $arr[1][9] == $arr[2][9] && $arr[1][9] != ' '
       winning.win
     elsif $arr[1][9] == $arr[1][15] && $arr[1][9] == $arr[1][3] && $arr[1][9] != ' '
-      winnig.win
+      winning.win
     elsif $arr[0][3] == $arr[0][9] && $arr[0][3] == $arr[0][15] && $arr[0][3] != ' '
       winning.win
     elsif $arr[0][3] == $arr[1][3] && $arr[0][3] == $arr[2][3] && $arr[0][3] != ' '
-      winnig.win
+      winning.win
     elsif $arr[2][15] == $arr[2][9] && $arr[2][15] == $arr[2][3] && $arr[2][15] != ' '
       winning.win
     elsif $arr[2][15] == $arr[1][15] && $arr[2][15] == $arr[0][15] && $arr[2][15] != ' '
@@ -154,7 +154,10 @@ def start
   end
 end
 
-start
+first_start = Game.new
+board_1 = Board.new
+board_1.board
+first_start.turns
 
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Style/GlobalVars
