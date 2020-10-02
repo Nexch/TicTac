@@ -34,11 +34,11 @@ end
 
 # Game
 class Game
-  @turn = 1
+  @@turn = 1
   def turns
-    while @turn <= 9
+    while @@turn <= 9
       check_player = Player.new
-      true_arr = check_player.lol(@turn)
+      true_arr = check_player.lol(@@turn)
       inp1_i = true_arr[0] - 1
       inp2_i = (true_arr[1] * 6) - 3
       p $flag
@@ -48,8 +48,8 @@ class Game
       board_1 = Board.new
       board_1.board
       cheking = Logic.new
-      cheking.check if @turn >= 5
-      @turn += 1
+      cheking.check if @@turn >= 5
+      @@turn += 1
     end
     tie = Player.new
     tie.draw
@@ -67,7 +67,7 @@ class Game
   end
 
   def play
-    @turn = 1
+    @@turn = 1
     $arr = [[' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ']]
     start
   end
