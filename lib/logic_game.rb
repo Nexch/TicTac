@@ -1,5 +1,3 @@
-# rubocop:disable Naming/VariableNumber, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Style/GuardClause, Style/MultipleComparison
-
 class Logic
   def same_place(argument_x, argument_y)
     if $arr[argument_x][argument_y] != ' '
@@ -41,7 +39,6 @@ class Game
       true_arr = check_player.lol(@@turn)
       inp1_i = true_arr[0] - 1
       inp2_i = (true_arr[1] * 6) - 3
-      p $flag
       same = Logic.new
       same.same_place(inp1_i, inp2_i)
       $arr[inp1_i][inp2_i] = $flag
@@ -72,5 +69,3 @@ class Game
     start
   end
 end
-
-# rubocop:enable Naming/VariableNumber, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Style/GuardClause, Style/MultipleComparison

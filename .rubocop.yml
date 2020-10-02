@@ -16,8 +16,10 @@ Metrics/ClassLength:
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
   Max: 330
-
-
+Metrics/CyclomaticComplexity:
+  Max: 300
+Metrics/PerceivedComplexity:
+  Max: 300
 Style/Documentation:
   Enabled: false
 Style/ClassVars:
@@ -34,7 +36,12 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
-
+Style/MultipleComparison:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:

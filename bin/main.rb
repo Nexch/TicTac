@@ -1,5 +1,3 @@
-# rubocop:disable Style/MultipleComparison, Naming/VariableNumber
-
 # !/usr/bin/env ruby
 
 require_relative '../lib/logic_game.rb'
@@ -106,5 +104,3 @@ first_start = Game.new
 board_1 = Board.new
 board_1.board
 first_start.turns
-
-# rubocop:enable Style/MultipleComparison, Naming/VariableNumber
