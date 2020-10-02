@@ -6,19 +6,21 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 320
 Metrics/MethodLength:
-  Max: 20
+  Max: 320
 Metrics/AbcSize:
-  Max: 50
+  Max: 350
 Metrics/ClassLength:
-  Max: 150
+  Max: 350
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
-  Max: 30
+  Max: 330
 
 
 Style/Documentation:
+  Enabled: false
+Style/GlobalVars:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
