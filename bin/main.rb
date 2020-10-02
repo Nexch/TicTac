@@ -1,12 +1,9 @@
-# frozen_string_literal: true
-# rubocop:disable Metrics/MethodLength
-# rubocop:disable Style/GlobalVars
-# rubocop:disable Style/ClassVars
-# rubocop:disable Style/MultipleComparison
-# rubocop:disable Naming/VariableNumber
-# rubocop:disable Layout/LineLength
+# rubocop:disable Style/MultipleComparison, Naming/VariableNumber
 
 # !/usr/bin/env ruby
+
+require_relative '../lib/logic_game.rb'
+
 class Board
   private
 
@@ -24,9 +21,9 @@ class Board
     print "\n"
   end
 
-  def true_line(array)
-    array = array.join('')
-    print array
+  def true_line(arg_array)
+    arg_array = arg_array.join('')
+    print arg_array
     print "\n"
   end
 
@@ -49,103 +46,54 @@ class Board
   $arr = [[' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ']]
 end
 
-# Game
-class Game
-  @@turn = 1
-  def turns
-    p 'Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column'
-    while @@turn <= 9
-      flag = if @@turn.odd?
-               'x'
-             else
-               'o'
-             end
-      p "player #{@@flag}"
-      p 'Select row'
-      inp1 = gets
-      p 'Select colum'
-      inp2 = gets
-      inp1_i = inp1.to_i
-      inp2_i = inp2.to_i
-      parameters(inp1_i)
-      parameters(inp2_i)
-      inp1_i -= 1
-      inp2_i = (inp2_i * 6) - 3
-      same = Logic.new
-      same.same_place(inp1_i, inp2_i)
-      $arr[inp1_i][inp2_i] = @@flag
-      board_1 = Board.new
-      board_1.board
-      cheking = Logic.new
-      if @@turn >= 5
-        cheking.check
-      end
-      @@turn += 1
-    end
-    p 'draw'
-    play
+class Player
+  attr_accessor :inp1_i
+  def lol(arg_turn)
+    $flag = if arg_turn.odd?
+              'x'
+            else
+              'o'
+            end
+    puts "player #{$flag}"
+    puts 'Select row'
+    input_1 = gets
+    @inp1_i = input_1.to_i
+    checking = Game.new
+    checking.parameters(@inp1_i)
+    puts 'Select colum'
+    input_2 = gets
+    @inp2_i = input_2.to_i
+    checking.parameters(@inp2_i)
+    [@inp1_i, @inp2_i]
   end
 
-  def parameters(arg)
-    if arg == 1 || arg == 2 || arg == 3
+  def draw
+    puts 'draw'
+  end
 
-    else
-      p 'Error'
-      turns
-    end
+  def cheat
+    puts 'you are cheating'
+  end
+
+  def error
+    puts 'error'
+    puts 'Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column'
   end
 
   def win
-    p "Player #{@@flag} win"
-    play
-  end
-
-  def play
-    @@turn = 1
-    $arr = [[' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ']]
-    start
+    p "Player #{$flag} win"
+    start_again = Game.new
+    start_again.play
   end
 end
-
-class Logic
-  def same_place(x, y)
-    if $arr[x][y] != " "
-      puts "You are cheating"
-      turn_again = Game.new
-      turn_again.turns
-    else
-    end
-  end
-
-  def check
-    winning = Game.new
-    if $arr[1][9] == $arr[0][15] && $arr[1][9] == $arr[2][3] && $arr[1][19] != " "
-      winning.win
-    elsif $arr[1][9] == $arr[0][3] && $arr[1][9] == $arr[2][15]  && $arr[1][19] != " "
-      winning.win
-    elsif $arr[1][9] == $arr[0][9] && $arr[1][9] == $arr[2][9]  && $arr[1][9] != " "
-      winning.win
-    elsif $arr[1][9] == $arr[1][15] && $arr[1][9] == $arr[1][3]  && $arr[1][9] != " "
-      winnig.win
-    elsif $arr[0][3] == $arr[0][9] && $arr[0][3] == $arr[0][15]  && $arr[0][3] != " "
-      winning.win
-    elsif $arr[0][3] == $arr[1][3] && $arr[0][3] == $arr[2][3]  && $arr[0][3] != " "
-      winnig.win
-    elsif $arr[2][15] == $arr[2][9] && $arr[2][15] == $arr[2][3] && $arr[2][15] != " "
-      winning.win
-    elsif $arr[2][15] == $arr[1][15] && $arr[2][15] == $arr[0][15]  && $arr[2][15] != " "
-      winning.win
-    end
-  end
-end
-
 puts 'TIC-TAC-TOE GAME'
 
 def start
-  puts 'Do you want to play? (yes/no)'
-
+  puts 'Do you want to play again? (yes/no)'
   want_to_play = gets.chomp.downcase
   if want_to_play == 'yes' || want_to_play == 'y'
+    board_1 = Board.new
+    board_1.board
     game_1 = Game.new
     game_1.turns
   else
@@ -154,11 +102,9 @@ def start
   end
 end
 
-start
+first_start = Game.new
+board_1 = Board.new
+board_1.board
+first_start.turns
 
-# rubocop:enable Metrics/MethodLength
-# rubocop:enable Style/GlobalVars
-# rubocop:enable Style/ClassVars
-# rubocop:enable Style/MultipleComparison
-# rubocop:enable Naming/VariableNumber
-# rubocop:enable Layout/LineLength
+# rubocop:enable Style/MultipleComparison, Naming/VariableNumber
