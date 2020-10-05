@@ -49,11 +49,11 @@ Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for tw
 
 - Keep alternating moves until one of the players win
 
-![screenshot](./lib/screenshot/win.png)
+![screenshot](screenshots/screen-2.png)
 
 - Or Keep alternating moves until the players Tied and no one when
 
-![screenshot](./lib/screenshot/tied.png)
+![screenshot](screenshots/screen-3.png)
 
 ## 🔧 Built With
 
