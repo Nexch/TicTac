@@ -1,8 +1,3 @@
-# rubocop:disable Style/GlobalVars
-# rubocop:disable Style/MultipleComparison
-# rubocop:disable Naming/VariableNumber
-# rubocop:disable Layout/LineLength
-
 # !/usr/bin/env ruby
 
 require_relative '../lib/logic_game.rb'
@@ -49,10 +44,50 @@ class Board
   $arr = [[' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ']]
 end
 
+class Player
+  attr_accessor :inp1_i
+  def lol(arg_turn)
+    $flag = if arg_turn.odd?
+              'x'
+            else
+              'o'
+            end
+    puts "player #{$flag}"
+    puts 'Select row'
+    input_1 = gets
+    @inp1_i = input_1.to_i
+    checking = Game.new
+    checking.parameters(@inp1_i)
+    puts 'Select colum'
+    input_2 = gets
+    @inp2_i = input_2.to_i
+    checking.parameters(@inp2_i)
+    [@inp1_i, @inp2_i]
+  end
+
+  def draw
+    puts 'draw'
+  end
+
+  def cheat
+    puts 'you are cheating'
+  end
+
+  def error
+    puts 'error'
+    puts 'Firt put the a number between 1-3 to select the row then put a number between 1-3 to select the column'
+  end
+
+  def win
+    p "Player #{$flag} win"
+    start_again = Game.new
+    start_again.play
+  end
+end
 puts 'TIC-TAC-TOE GAME'
 
 def start
-  puts 'Do you want to play? (yes/no)'
+  puts 'Do you want to play again? (yes/no)'
   want_to_play = gets.chomp.downcase
   if want_to_play == 'yes' || want_to_play == 'y'
     board_1 = Board.new
@@ -69,9 +104,3 @@ first_start = Game.new
 board_1 = Board.new
 board_1.board
 first_start.turns
-
-# rubocop:enable Style/GlobalVars
-
-# rubocop:enable Style/MultipleComparison
-# rubocop:enable Naming/VariableNumber
-# rubocop:enable Layout/LineLength
