@@ -37,30 +37,23 @@ Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for tw
 
 - When run the game an empty board will shown:
 
-![screenshot](./lib/screenshot/board.png)
+![screenshot](screenshots/screen-1.png)
 
 - Have the first player go first. Though traditionally, the first player goes with "X"
 
-- Enter the number of the position in the board.
+- Enter the number of the row and then enter the number of the colummn where you want your move.
 
 - Have the second player go second. The second player goes with "O"
 
-- Enter the number of the position in the board.
+- Enter the number of the row and then enter the number of the colummn where you want your move.
 
-- Keep alternating moves until one of the players has drawn a row of three symbols and WIN
+- Keep alternating moves until one of the players win
 
 ![screenshot](./lib/screenshot/win.png)
 
 - Or Keep alternating moves until the players Tied and no one when
 
 ![screenshot](./lib/screenshot/tied.png)
-
-## Screenshots
-
-![screenshot](./lib/screenshot/screenshot1.png)
-
- <br>      
- <br>
 
 ## 🔧 Built With
 
