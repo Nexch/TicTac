@@ -39,21 +39,23 @@ Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for tw
 
 ![screenshot](screenshots/screen-1.png)
 
-- Have the first player go first. Though traditionally, the first player goes with "X"
+- Have the first player go first. Though traditionally, the first player goes with "X".
 
 - Enter the number of the row and then enter the number of the colummn where you want your move.
 
-- Have the second player go second. The second player goes with "O"
+- Have the second player go second. The second player goes with "O".
 
 - Enter the number of the row and then enter the number of the colummn where you want your move.
 
-- Keep alternating moves until one of the players win
+- Keep alternating moves until one of the players win.
 
 ![screenshot](screenshots/screen-2.png)
 
-- Or Keep alternating moves until the players Tied and no one when
+- Or Keep alternating moves until the players Tied and no one when.
 
 ![screenshot](screenshots/screen-3.png)
+
+- At the end you can choose if you wnat to play again.
 
 ## 🔧 Built With
 
@@ -63,7 +65,7 @@ Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for tw
 
 ### Usage
 
-- Personal Project - Create a Tic-Tac-Toe-Game to run basic concepts of Ruby language just for learning propose.
+- Personal Project - Create a Tic-Tac-Toe Game to run basic concepts of Ruby language just for learning propose.
 
 ## 👤 Authors
 
